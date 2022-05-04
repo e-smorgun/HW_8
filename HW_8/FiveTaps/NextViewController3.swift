@@ -16,22 +16,12 @@ class NextViewController3: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func didTapClose() {
-        self.dismiss(animated: true)
-    }
-    
     @IBAction func didTapTransferButton(){
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //let viewController = str.instantiateViewController(withIdentifier: "NextViewController1")
-        
         let viewController: NextViewController4 = str.instantiateViewController(withIdentifier: "NextViewController4") as! NextViewController4
+        viewController.message = message
         
-        viewController.modalPresentationStyle = .fullScreen
-        viewController.modalTransitionStyle = .flipHorizontal
-        
-        present(viewController, animated: true)
-        
-        viewController.resultLabel.text = self.message
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

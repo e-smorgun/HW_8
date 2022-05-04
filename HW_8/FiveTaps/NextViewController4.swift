@@ -19,8 +19,5 @@ class NextViewController4: UIViewController {
         super.viewDidLoad()
         resultLabel.text = message
     }
-    @IBAction func didTapClose() {
-        self.dismiss(animated: true)
-    }
     
 }

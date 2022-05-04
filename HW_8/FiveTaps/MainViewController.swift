@@ -17,18 +17,10 @@ class MainViewController: UIViewController {
     
     @IBAction func didTapTransferButton(){
         self.message = textField.text ?? "Hello"
-        
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-       
-        
         let viewController: NextViewController1 = str.instantiateViewController(withIdentifier: "NextViewController1") as! NextViewController1
-        
-        viewController.modalPresentationStyle = .fullScreen
-        viewController.modalTransitionStyle = .flipHorizontal
-        
         viewController.message = message
-
-        present(viewController, animated: true)
-    }
+        
+        self.navigationController?.pushViewController(viewController, animated: true)    }
 }
 
